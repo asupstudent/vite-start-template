@@ -1,0 +1,185 @@
+.custom-input,
+.custom-textarea {
+  position: relative;
+  width: 100%;
+
+  label,
+  .custom-input__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 400;
+
+    @include vp-1439 {
+      line-height: 20px;
+    }
+
+    @include vp-767 {
+      line-height: 14px;
+    }
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    font-size: 18px;
+    line-height: 18px;
+    border-radius: 8px;
+    border: none;
+    transition: outline $trans-default;
+    background-color: $color-transparent;
+  }
+
+  input {
+    padding: 12px 25px;
+    min-height: 48px;
+  }
+
+  textarea {
+    padding: 16px 25px;
+    min-height: 96px;
+    resize: none;
+    appearance: none;
+
+    @include vp-767 {
+      min-height: 92px;
+    }
+  }
+}
+
+.custom-input.is-invalid {
+  input,
+  textarea {
+    outline: 1px solid $color-wild-watermelon;
+    background-color: $color-wild-watermelon-20;
+  }
+}
+
+.custom-input--primary {
+  label,
+  .custom-input__wrapper {
+    gap: 9px;
+
+    @include vp-767 {
+      gap: 10px;
+    }
+
+    &:focus-within span {
+      color: $color-alabaster;
+    }
+
+    &:hover span {
+      color: $color-alabaster;
+    }
+
+    &:hover input,
+    &:hover textarea {
+      outline: 1px solid $color-white;
+    }
+  }
+
+  span {
+    margin-left: -1px;
+    line-height: 18px;
+    color: $color-alabaster-80;
+
+    @include vp-767 {
+      font-size: 12px;
+    }
+  }
+
+  input,
+  textarea {
+    outline: 1px solid $color-white-30;
+    color: $color-white;
+
+    &:active,
+    &:focus {
+      outline: 1px solid $color-white;
+    }
+  }
+}
+
+.custom-input--secondary {
+  label,
+  .custom-input__wrapper {
+    gap: 8px;
+
+    &:focus-within span {
+      color: $color-charcoal;
+    }
+
+    &:hover span {
+      color: $color-charcoal;
+    }
+
+    &:hover input,
+    &:hover textarea {
+      outline: 1px solid $color-charcoal;
+    }
+
+    @include vp-767 {
+      gap: 6px;
+    }
+  }
+
+  span {
+    line-height: 20px;
+    color: $color-charcoal-80;
+  }
+
+  input,
+  textarea {
+    color: $color-charcoal;
+    outline: 1px solid $color-charcoal-30;
+
+    &:active,
+    &:focus {
+      outline: 1px solid $color-charcoal;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
+    }
+  }
+
+  input {
+    @include vp-767 {
+      min-height: 42px;
+    }
+  }
+}
+
+.custom-input--primary.is-disabled {
+  pointer-events: none;
+  cursor: default;
+
+  span {
+    color: $color-alabaster-60;
+  }
+
+  input,
+  textarea {
+    opacity: 0.4;
+    outline: 1px solid $color-white;
+    background-color: $color-white-20;
+  }
+}
+
+.custom-input--secondary.is-disabled {
+  pointer-events: none;
+  cursor: default;
+
+  span {
+    color: $color-mischka-60;
+  }
+
+  input,
+  textarea {
+    outline: 1px solid $color-mischka-50;
+    background-color: $color-mischka-20;
+  }
+}

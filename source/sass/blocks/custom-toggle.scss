@@ -1,0 +1,200 @@
+.custom-toggle {
+  position: relative;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  width: 100%;
+
+  label {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+  }
+
+  .custom-toggle__box {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  svg {
+    position: absolute;
+    display: none;
+    left: 5px;
+    width: 10px;
+    height: 8px;
+  }
+
+  .custom-toggle__text {
+    margin-top: 4px;
+    cursor: pointer;
+  }
+}
+
+.custom-toggle.is-invalid {
+  .custom-toggle__box {
+    border: 1px solid $color-wild-watermelon;
+    background-color: $color-wild-watermelon-20;
+  }
+}
+
+.custom-toggle.is-disabled {
+  pointer-events: none;
+
+  .custom-toggle__box,
+  .custom-toggle__text {
+    cursor: default;
+  }
+
+  input:checked + .custom-toggle__box {
+    border: none;
+    background-color: $color-mischka;
+  }
+
+  input:checked + svg {
+    stroke: $color-white-70;
+  }
+}
+
+.custom-toggle--primary.is-disabled {
+  input + .custom-toggle__box {
+    border: 1px solid $color-white;
+    background-color: $color-white-60;
+  }
+}
+
+.custom-toggle--secondary.is-disabled {
+  input + .custom-toggle__box {
+    border: 1px solid $color-cerulean-blue;
+    background-color: $color-cerulean-blue-60;
+  }
+}
+
+.custom-toggle--primary {
+  margin-top: 4px;
+  margin-left: -1px;
+
+  .custom-toggle__box {
+    border: 1px solid $color-white-70;
+    background-color: $color-cerulean-blue;
+  }
+
+  .custom-toggle__text {
+    color: $color-white-90;
+
+    @include vp-767 {
+      margin-top: -3px;
+      line-height: 14px;
+    }
+  }
+
+  input:checked + .custom-toggle__box {
+    background: $color-white;
+    border: none;
+  }
+
+  input:checked ~ svg {
+    top: 6px;
+    display: block;
+    stroke: $color-cerulean-blue;
+  }
+
+  @include vp-767 {
+    margin-top: 5px;
+    margin-bottom: 9px;
+  }
+}
+
+.custom-toggle--primary input {
+  &:hover,
+  &:focus-visible {
+    + .custom-toggle__box {
+      background-color: $color-cerulean-blue;
+      border: 1px solid $color-white;
+    }
+
+    ~ .custom-toggle__text {
+      color: $color-white;
+    }
+  }
+}
+
+.custom-toggle--primary input:checked {
+  &:hover,
+  &:focus-visible {
+    ~ svg {
+      stroke: $color-white;
+    }
+  }
+}
+
+.custom-toggle--secondary {
+  .custom-toggle__box {
+    margin-top: 3px;
+    border: 1px solid $color-cerulean-blue-70;
+    background-color: $color-white;
+  }
+
+  .custom-toggle__text {
+    align-self: center;
+    color: $color-charcoal-90;
+
+    @include vp-767 {
+      margin-top: 0;
+      line-height: 14px;
+    }
+  }
+
+  input:checked + .custom-toggle__box {
+    background: $color-cerulean-blue;
+    border: none;
+
+    @include vp-767 {
+      margin-bottom: 4px;
+    }
+  }
+
+  input:checked ~ svg {
+    top: 9px;
+    display: block;
+    stroke: $color-white;
+  }
+
+  @include vp-767 {
+    margin-bottom: 9px;
+  }
+}
+
+.custom-toggle--secondary input {
+  &:hover,
+  &:focus-visible {
+    + .custom-toggle__box {
+      background-color: $color-white;
+      border: 1px solid $color-cerulean-blue;
+    }
+
+    ~ .custom-toggle__text {
+      color: $color-charcoal;
+    }
+  }
+}
+
+.custom-toggle--secondary input:checked {
+  &:hover,
+  &:focus-visible {
+    ~ svg {
+      stroke: $color-cerulean-blue;
+    }
+  }
+}

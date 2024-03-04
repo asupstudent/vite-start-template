@@ -1,0 +1,261 @@
+.reviews {
+  margin-bottom: 121px;
+
+  @include vp-1439 {
+    margin-bottom: 100px;
+    padding-bottom: 1px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 59px;
+    padding-bottom: 0;
+  }
+}
+
+.reviews__wrapper {
+  display: grid;
+  grid-template-columns: auto auto 54px;
+  grid-template-rows: repeat(3, auto);
+  align-items: center;
+
+  h2 {
+    @include title;
+
+    margin-bottom: 46px;
+    grid-column: 1/-1;
+    padding-left: 3px;
+    padding-top: 5px;
+
+    @include vp-1439 {
+      padding-left: 0;
+      padding-top: 0;
+      margin-top: -1px;
+      margin-bottom: 41px;
+    }
+
+    @include vp-767 {
+      padding-top: 4px;
+      margin-bottom: 31px;
+      grid-column: 1/2;
+    }
+  }
+
+  @include vp-767 {
+    grid-template-columns: 70% auto;
+  }
+}
+
+.reviews__slider {
+  width: 100%;
+  grid-column: 1/-1;
+  margin-bottom: 38px;
+
+  @include vp-767 {
+    margin-bottom: 0;
+  }
+}
+
+.reviews__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reviews__item {
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid $color-cerulean-blue;
+  padding: 49px 51px 43px 49px;
+
+  @include vp-1439 {
+    max-width: 560px;
+    padding-bottom: 46px;
+    padding-right: 48px;
+  }
+
+  @include vp-767 {
+    max-width: unset;
+    padding: 30px 14px 25px;
+  }
+
+  blockquote {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    @include vp-767 {
+      gap: 24px;
+    }
+  }
+}
+
+.reviews__quote-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 90px auto auto;
+  grid-auto-rows: auto;
+  align-items: center;
+  gap: 15px;
+
+  @include vp-767 {
+    grid-template-columns: 60px auto;
+    grid-auto-rows: auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  picture {
+    grid-column: 1/2;
+    width: fit-content;
+  }
+
+  cite {
+    grid-column: 2/3;
+    color: $color-cerulean-blue;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include vp-1439 {
+      font-size: 20px;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  dl {
+    grid-column: 3/4;
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 2px;
+
+    @include vp-1439 {
+      margin-top: 4px;
+      margin-right: 2px;
+    }
+
+    @include vp-767 {
+      grid-column: 1/-1;
+      margin-left: 0;
+    }
+  }
+
+  dt {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0.12px;
+    text-transform: uppercase;
+    color: $color-cerulean-blue;
+  }
+
+  dd {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+
+    @include vp-1439 {
+      line-height: 20px;
+    }
+
+    @include vp-767 {
+      font-size: 12px;
+      line-height: 14px;
+      color: $color-charcoal-90;
+    }
+  }
+}
+
+.reviews__author-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  @include vp-1439 {
+    row-gap: 4px;
+  }
+
+  @include vp-767 {
+    row-gap: 7px;
+  }
+}
+
+.reviews__quote {
+  h3 {
+    margin: 0 0 14px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 26px;
+    color: $color-cerulean-blue;
+
+    @include vp-1439 {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 18px;
+      margin-bottom: 15px;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    @include vp-1439 {
+      line-height: 20px;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+    }
+  }
+
+  &--differ p {
+    @include vp-1439 {
+      padding-right: 2px;
+    }
+  }
+}
+
+.reviews__scrollbar {
+  @include scrollbar;
+
+  grid-column: 1/-2;
+}
+
+.reviews__slider-buttons {
+  grid-column: 3/-1;
+  justify-self: end;
+  display: flex;
+  gap: 10px;
+
+  @include vp-1439 {
+    margin-right: 45px;
+  }
+
+  @include vp-767 {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    gap: 8px;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,55 @@
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  background-color: $color-cerulean-blue;
+  text-decoration: none;
+  width: 36px;
+  height: 36px;
+  transition: background-color $trans-default;
+  border-radius: 50%;
+
+  @include vp-767 {
+    width: 26px;
+    height: 26px;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    color: $color-white;
+
+    @include vp-767 {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    svg {
+      color: $color-white-70;
+    }
+  }
+
+  &:active {
+    background-color: $color-endeavour;
+
+    svg {
+      color: $color-white;
+    }
+  }
+}
+
+.social-link.is-disabled {
+  background-color: $color-mischka;
+  pointer-events: none;
+  cursor: default;
+
+  svg {
+    color: $color-white-60;
+  }
+}

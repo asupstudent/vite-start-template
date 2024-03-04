@@ -1,0 +1,86 @@
+@mixin vp-1439 {
+  @media (max-width: ($vp-1440 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-767 {
+  @media (max-width: ($vp-768 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-479 {
+  @media (max-width: ($vp-480 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-319 {
+  @media (max-width: ($vp-320 - 1px)) {
+    @content;
+  }
+}
+
+@mixin angle {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    mask-image: url("../img/svg/angle.svg");
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    background-color: $color-white;
+  }
+}
+
+@mixin title {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 50px;
+  color: $color-cerulean-blue;
+
+  @include vp-1439 {
+    font-size: 34px;
+    line-height: 50px;
+  }
+
+  @include vp-767 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+@mixin title-light {
+  @include title;
+
+  color: $color-white;
+}
+
+@mixin scrollbar {
+  position: relative;
+  height: 2px;
+  width: calc(100% - 52px);
+  background-color: $color-cerulean-blue-20;
+
+  @include vp-1439 {
+    width: calc(100% - 109px);
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+
+  div {
+    width: 392px;
+    height: 2px;
+    background-color: $color-cerulean-blue;
+    cursor: pointer;
+
+    @include vp-1439 {
+      width: 324px;
+    }
+  }
+}
