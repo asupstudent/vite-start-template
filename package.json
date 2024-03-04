@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host --open",
-    "build": "vite build --emptyOutDir --base=./",
+    "build": "vite build --emptyOutDir",
     "preview": "vite preview --open",
     "convert-rastr": "node convert-rastr.js",
     "w3c": "html-validator source --quiet",
